@@ -1,0 +1,23 @@
+# Static frontend + serverless functions. No build step for the site itself;
+# Netlify installs package.json deps and bundles the functions automatically.
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Clean URLs: /api/* → the matching function.
+[[redirects]]
+  from = "/api/:fn"
+  to = "/.netlify/functions/:fn"
+  status = 200
+
+# Everything else falls back to the single page.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

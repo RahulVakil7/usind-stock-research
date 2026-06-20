@@ -1,0 +1,7 @@
+{
+  "name": "ai-tech-live-research",
+  "version": "2.2.0",
+  "private": true,
+  "description": "Live equity research for US, NSE & BSE tech — realtime quotes/financials via Yahoo Finance + AI analysis via any OpenAI-compatible open-source model (Groq/Together/OpenRouter/Ollama), on Netlify Functions. No data API key required.",
+  "dependencies": {}
+}
